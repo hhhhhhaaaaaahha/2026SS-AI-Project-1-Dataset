@@ -3,7 +3,7 @@
 As per the project requirements, this dataset was independently collected and constructed rather than sourced from existing public repositories.
 
 ### 2.1 Data Collection Methodology
-Data was gathered using a custom web scraper (`cpbl_crawler.py`) targeting the CPBL official schedule page. Collecting this data presented significant technical hurdles, as the modern CPBL website utilizes a Vue.js frontend coupled with a heavily secured ASP.NET backend. 
+Data was gathered using a custom web scraper (`cpbl_crawler.py`) targeting the [CPBL official schedule page](https://www.cpbl.com.tw/schedule). Collecting this data presented significant technical hurdles, as the modern CPBL website utilizes a Vue.js frontend coupled with a heavily secured ASP.NET backend. 
 
 Standard `GET` or `POST` requests via libraries like `requests` or `BeautifulSoup` were actively blocked by the server due to missing anti-forgery tokens and mismatched cookies. To overcome this, an advanced **XHR Interception and Payload Spoofing** strategy was implemented:
 * **Headless Browser Automation:** Selenium WebDriver was deployed to naturally render the DOM, execute the Vue.js lifecycle, and acquire legitimate session cookies.
